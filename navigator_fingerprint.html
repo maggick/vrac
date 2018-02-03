@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <table border="1">
+      <script>
+        document.write("<h1>Navigateur footprint</h1>")
+        for (var key in navigator){
+          if (typeof(navigator[key]) === 'string') {
+            document.write("<tr><td>" + key + "</td>");
+            document.write("<td>" + navigator[key]);
+            document.write("</td></tr>");
+          }
+        }
+      </script>
+    </table>
+  </body>
+</html>
