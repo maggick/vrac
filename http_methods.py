@@ -16,7 +16,7 @@ for method in methods:
     if (method == "PUT"):
         data = '<html>test</html>'
         r = requests.request(method,url+"/test.html", data=data, verify=False)
-        print("{} /test.html HTTP/1.1 \nHost: {} \n".format(method, url.split('/')[2]))
+        print("{} /test.html HTTP/1.1 \nHost: {} \n{}\n".format(method, url.split('/')[2], data))
     elif (method == "DELETE"):
         r = requests.request(method,url+"/test.html", verify=False)
         print("{} /test.html HTTP/1.1 \nHost: {} \n".format(method, url.split('/')[2]))
