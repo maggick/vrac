@@ -9,7 +9,7 @@ if len(sys.argv)!=2:
   exit(0)
 
 url = sys.argv[1]
-methods = ["HEAD", "OPTIONS", "PUT", "DELETE", "TRACE", "NOTAMETHOD"]
+methods = ["HEAD", "OPTIONS", "PUT", "DELETE", "CONNECT", "TRACE", "NOTAMETHOD"]
 
 for method in methods:
     r = requests.Response
@@ -20,6 +20,8 @@ for method in methods:
     elif (method == "DELETE"):
         r = requests.request(method,url+"/test.html", verify=False)
         print("{} /test.html HTTP/1.1 \nHost: {} \n".format(method, url.split('/')[2]))
+    elif (method == "CONNECT"):
+        pass #TODO
     else:
         r = requests.request(method,url, verify=False)
         print("{} / HTTP/1.1 \nHost: {} \n".format(method, url.split('/')[2]))
