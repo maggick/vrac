@@ -9,7 +9,8 @@ if len(sys.argv)!=2:
   exit(0)
 
 url = sys.argv[1]
-methods = ["HEAD", "OPTIONS", "PUT", "DELETE", "CONNECT", "TRACE", "NOTAMETHOD"]
+methods = ["HEAD", "OPTIONS", "PUT", "DELETE", "NOTAMETHOD"]
+#CONNECT TRACE
 
 for method in methods:
     r = requests.Response
