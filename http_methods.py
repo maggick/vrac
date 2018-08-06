@@ -26,7 +26,11 @@ for method in methods:
     else:
         r = requests.request(method,url, verify=False)
         print("{} / HTTP/1.1 \nHost: {} \n".format(method, url.split('/')[2]))
-    print ("HTTP/1.1 {}".format(r.status_code))
+    try :
+        print ("HTTP/1.1 {}".format(r.status_code))
+    except AttributeError:
+        # TODO
+        pass
     for header in r.headers:
         print ("{}: {}".format(header, r.headers[header]))
     print ("{}\n".format(r.text))
